@@ -63,6 +63,13 @@ void setup() {
   Serial.begin(115200);
   delay(500);
 
+  pinMode(4, OUTPUT); // LED
+
+  // Flash LED to indicate booting
+  digitalWrite(4, HIGH);
+  delay(100);
+  digitalWrite(4, LOW);
+
   Serial.printf("GO GO!\n");
 
   // Map the model into a usable data structure. This doesn't involve any
@@ -163,7 +170,11 @@ void loop() {
   Serial.println("Will respond.");
   // Respond to detection
   RespondToDetection(person_score_f, no_person_score_f);
-  vTaskDelay(1); // to avoid watchdog trigger
+  if (person_score_f > 0.7) {
+    digitalWrite(4, HIGH);
+  } else {
+    digitalWrite(4, LOW);
+  }
 }
 #endif
 
