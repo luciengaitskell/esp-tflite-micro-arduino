@@ -13,6 +13,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
+#include "esp_nn.h" // include so that we can use the optimized kernels
 #include "main_functions.h"
 #include <Arduino.h>
 
