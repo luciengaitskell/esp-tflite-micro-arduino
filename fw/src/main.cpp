@@ -176,6 +176,7 @@ void loop() {
   } else {
     digitalWrite(4, LOW);
   }
+  // vTaskDelay(1); // to avoid watchdog trigger
 }
 #endif
 
