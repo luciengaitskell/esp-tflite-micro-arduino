@@ -59,7 +59,17 @@
       "-Irepo/third_party/flatbuffers/include",
       "-Irepo/third_party/kissfft",
       "-Irepo/third_party/gemmlowp",
-      "-Irepo/third_party/ruy"
+      "-Irepo/third_party/ruy",
+      "-Wno-error=attributes",
+      "-Wno-error=shadow",
+      "-Wno-maybe-uninitialized",
+      "-Wno-missing-field-initializers",
+      "-Wno-error=sign-compare",
+      "-Wno-error=double-promotion",
+      "-Wno-type-limits",
+      "-fno-rtti",
+      "-fno-exceptions",
+      "-Werror"
     ]
   }
 }
