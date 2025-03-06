@@ -54,6 +54,12 @@
       "-<tensorflow/lite/micro/kernels/softmax.cc>",
       "-<examples>",
       "-<scripts>"
+    ],
+    "flags": [
+      "-Irepo/third_party/flatbuffers/include",
+      "-Irepo/third_party/kissfft",
+      "-Irepo/third_party/gemmlowp",
+      "-Irepo/third_party/ruy"
     ]
   }
 }
