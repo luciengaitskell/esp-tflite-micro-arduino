@@ -1,0 +1,10 @@
+{
+  "name": "esp-tflite-micro",
+  "version": "0.0.1",
+  "build": {
+    "srcDir": "repo/src",
+    "includeDir": "repo/include",
+    "srcFilter": ["+<**/*.c>", "-<**/*esp32s3.c>", "-<**/*esp32p4.c>"],
+    "flags": ["-Icommon"]
+  }
+}
