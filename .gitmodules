@@ -1,6 +1,6 @@
-[submodule "fw/lib/esp-tflite-micro"]
-	path = fw/lib/esp-tflite-micro
-	url = https://github.com/espressif/esp-tflite-micro.git
 [submodule "fw/lib/esp-nn"]
 	path = fw/lib/esp-nn
 	url = https://github.com/espressif/esp-nn.git
+[submodule "fw/lib/esp-tflite-micro/repo"]
+	path = fw/lib/esp-tflite-micro/repo
+	url = https://github.com/espressif/esp-tflite-micro.git
