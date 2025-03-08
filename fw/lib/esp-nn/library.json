@@ -5,6 +5,6 @@
     "srcDir": "repo/src",
     "includeDir": "repo/include",
     "srcFilter": ["+<**/*.c>", "-<**/*esp32s3.c>", "-<**/*esp32p4.c>"],
-    "flags": ["-Icommon"]
+    "flags": ["-Irepo/src/common"]
   }
 }
