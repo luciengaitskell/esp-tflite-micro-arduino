@@ -34,6 +34,14 @@ limitations under the License.
 #include <esp_log.h>
 #include <esp_timer.h>
 
+#ifdef INDICATE_LED_REV
+#define INDICATE_LED_HI 0
+#define INDICATE_LED_LO 1
+#else
+#define INDICATE_LED_HI 1
+#define INDICATE_LED_LO 0
+#endif
+
 // Globals, used for compatibility with Arduino-style sketches.
 namespace {
 const tflite::Model *model = nullptr;
@@ -64,12 +72,12 @@ void setup() {
   Serial.begin(115200);
   delay(500);
 
-  pinMode(4, OUTPUT); // LED
+  pinMode(INDICATOR_LED, OUTPUT); // LED
 
   // Flash LED to indicate booting
-  digitalWrite(4, HIGH);
+  digitalWrite(INDICATOR_LED, INDICATE_LED_HI);
   delay(100);
-  digitalWrite(4, LOW);
+  digitalWrite(INDICATOR_LED, INDICATE_LED_LO);
 
   Serial.printf("GO GO!\n");
 
@@ -172,9 +180,9 @@ void loop() {
   // Respond to detection
   RespondToDetection(person_score_f, no_person_score_f);
   if (person_score_f > 0.7) {
-    digitalWrite(4, HIGH);
+    digitalWrite(INDICATOR_LED, INDICATE_LED_HI);
   } else {
-    digitalWrite(4, LOW);
+    digitalWrite(INDICATOR_LED, INDICATE_LED_LO);
   }
   // vTaskDelay(1); // to avoid watchdog trigger
 }
